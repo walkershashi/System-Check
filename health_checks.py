@@ -6,12 +6,15 @@ import emails
 import socket
 import os
 
+# Check for the utilization of the system and send email for the differnent issues
+
 SENDER = 'automation@example.com'
 RECEIVER = 'username@example.com'
 BODY = "Please check your system and resolve the issue as soon as possible."
 
 cpu_usage = psutil.cpu_percent()
 disk_usage = shutil.disk_usage("/")
+
 # Check CPU Usage
 if cpu_usage > 80:
     subject = "Error - CPU usage is over 80%"
